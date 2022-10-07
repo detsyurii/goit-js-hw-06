@@ -1,3 +1,5 @@
+
+
 let counterValue = 0;
 
 const refs = {
@@ -6,12 +8,16 @@ const refs = {
     counterValue: document.querySelector('#value'),
 };
 
-refs.incrementBtn.addEventListener('click', () => {
-    counterValue += 1;
-    refs.counterValue.textContent = counterValue;
-});
-refs.decrementBtn.addEventListener('click', () => {
+refs.decrementBtn.addEventListener('click', onDecrementBtnClick);
+refs.incrementBtn.addEventListener('click', onIncrementBtnClick);
+
+
+function onDecrementBtnClick() {
     counterValue -= 1;
     refs.counterValue.textContent = counterValue;
-});
+}
 
+function onIncrementBtnClick() {
+    counterValue += 1;
+    refs.counterValue.textContent = counterValue;
+}
